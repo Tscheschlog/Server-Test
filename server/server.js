@@ -15,7 +15,6 @@ app.post('/', async (req, res) => {
 
   stepNum = stepNum.slice(stepNum.lastIndexOf(' '));
   res.send(response(await intent(userIntent, stepNum.toLowerCase())));
-  res.send(pix);
   console.log("-----------------------------------------------------------------------------------------------------------------");
 });
 
