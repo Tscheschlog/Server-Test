@@ -2,15 +2,15 @@
 const { readData, writeData } = require('../step/updateStep');
 const { selectStep, setStep } = require("../step/selectStep");
 
-// This is the full list of all the steps
+// This is the full list of all the steps and image urls
 const stepList = {
-  1:  "First, you need to get tools. These are located in the Red Container near the entrance door.",
-  2:  "After getting the tools, you need to get materials for the beam B-3 subassembly. This material is in the Blue Container that is located near the exit door.",
-  3:  "Connect the beam B-3 and the two A-6 angles by using 6 bolts of 5/8 inch diameter. Here is a tip: place the bolts in opposite sides starting from the top and put one washer on the nut side. Tight the bolts by hand.",
-  4:  "Now, you need to get materials for the other beam subassembly, S-4. This material is located in the Yellow container that is near the sink.",
-  5:  "Connect beam S-4 and the two A-8 angles by using 2 bolts of half inch diameter. Remember to put washers on both sides of the bolts. Then, adjust the torque wrench to 10 pounds per feet and tight the bolts to quarter of a turn.",
-  6:  "Now you will connect the B-3 subassembly to the main column C-1. Use 3 bolts with 5/8 inch diameter on both sides and tighten by hand. Remember to put the washer only on the nut side.",
-  7:  "You will now connect the beam S-4 to the column. Use 2 bolts with 1/2 inch dimensions on both sides of the angles to connect to the C-1 column. Put washers on both sides of the bolts. Lastly, adjust the torque wrench to 10 pounds per feet and tight the bolts to a quarter of a turn. This is the last step.",
+  1:  {text: "First, you need to get tools. These are located in the Red Container near the entrance door.", url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1674247412/step1_e5o7j5.jpg"},
+  2:  {text: "After getting the tools, you need to get materials for the beam B-3 subassembly. This material is in the Blue Container that is located near the exit door.",url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1674247674/step2_bsy9t5.jpg"},
+  3:  {text: "Connect the beam B-3 and the two A-6 angles by using 6 bolts of 5/8 inch diameter. Here is a tip: place the bolts in opposite sides starting from the top and put one washer on the nut side. Tight the bolts by hand.",url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1674247677/step3_dt3vza.jpg"},
+  4:  {text: "Now, you need to get materials for the other beam subassembly, S-4. This material is located in the Yellow container that is near the sink.",url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1674247680/step4_g2rkor.jpg"},
+  5:  {text: "Connect beam S-4 and the two A-8 angles by using 2 bolts of half inch diameter. Remember to put washers on both sides of the bolts. Then, adjust the torque wrench to 10 pounds per feet and tight the bolts to quarter of a turn.",url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1674247682/step5_b7n30m.jpg"},
+  6:  {text: "Now you will connect the B-3 subassembly to the main column C-1. Use 3 bolts with 5/8 inch diameter on both sides and tighten by hand. Remember to put the washer only on the nut side.",url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1674247685/step6_awbkvk.jpg"},
+  7:  {text: "You will now connect the beam S-4 to the column. Use 2 bolts with 1/2 inch dimensions on both sides of the angles to connect to the C-1 column. Put washers on both sides of the bolts. Lastly, adjust the torque wrench to 10 pounds per feet and tight the bolts to a quarter of a turn. This is the last step.",url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1674247687/step7_erjrve.jpg"},
 };
 
 // Variable used to store the current step within the switch statement
@@ -20,9 +20,31 @@ let currStep;
 module.exports = {
 
   // Put the text into a readable format for DialogFlow
-  response: function(text) {
+  response: function(text, imgURL = "") {
     return ({
-      "fulfillmentText": text,
+      "payload": {
+        "google": {
+          "expectUserResponse": true,
+          "richResponse": {
+            "items": [
+              {
+                "simpleResponse": {
+                  "textToSpeech": text
+                }
+              },
+              {
+                "basicCard": {
+                  "image": 
+                  {
+                    "url": imgURL,
+                    "accessibilityText": ""
+                  },
+                }
+              }
+            ]
+          }
+        }
+      }
     });
   },
 
@@ -32,7 +54,7 @@ module.exports = {
 
       // Welcome intent -----------------------------------------------------------------------------------------------------
       case 1:
-        return "Hello, how can I help you?";
+        return {text: "Hello, how can I help you?", url: ""};
 
       // Step intent --------------------------------------------------------------------------------------------------------
       case 2:
@@ -46,7 +68,7 @@ module.exports = {
 
         // Check if they have already reached the last step
         if(currStep == 7)
-          return "You have completed all the steps for assembly, is there anything else I can help with?";
+          return {text: "You have completed all the steps for assembly, is there anything else I can help with?", url: ""};
 
         // If not, give the user the next step
         currStep = parseInt(currStep) + 1;
@@ -60,7 +82,7 @@ module.exports = {
 
         // Check if they have already reached the last step
         if(currStep == 1)
-          return "There is no step before step one ...";
+          return {text: "There is no step before step one ...", url: ""};
 
         // If not, give the user the next step
         currStep = parseInt(currStep) - 1;
@@ -74,7 +96,7 @@ module.exports = {
         currStep = await setStep(selectStep(stepNum));
         console.log("Step Interpreted: " + currStep);
         if(currStep == -1)
-          return "Sorry I didn't catch that.";
+          return {text: "Sorry I didn't catch that.", url: ""};
 
         return stepList[currStep];
       
@@ -84,11 +106,11 @@ module.exports = {
          * Currently not needed.
          * Keep for testing purposes.
          */
-        return "Here is the help you need ...";
+        return {text: "Here is the help you need ...", url: ""};
 
       // Bad Input Intent ----------------------------------------------------------------------------------------------------
       default:
-        return "Sorry I didn't catch that.";
+        return {text: "Sorry I didn't catch that.", url: ""};
                   
     }
   },

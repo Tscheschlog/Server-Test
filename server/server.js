@@ -14,7 +14,12 @@ app.post('/', async (req, res) => {
   let stepNum = req.body.queryResult.queryText;
 
   stepNum = stepNum.slice(stepNum.lastIndexOf(' '));
-  res.send(response(await intent(userIntent, stepNum.toLowerCase())));
+
+  // Get a the step 'text' and image 'url'
+  let stepIntentInfo = await intent(userIntent, stepNum.toLowerCase());
+
+  // Format response and send it 
+  res.send(response(stepIntentInfo.text, stepIntentInfo.url));
   console.log("-----------------------------------------------------------------------------------------------------------------");
 });
 
