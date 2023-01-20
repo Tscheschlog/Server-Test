@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "ngrok": "^4.3.3",
+    "xmlhttprequest": "^1.8.0"
+  }
+}
