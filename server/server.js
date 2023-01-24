@@ -8,11 +8,12 @@ app.use(bodyParser.json());
 
 app.post('/', async (req, res) => {
 
-  // req.body.queryResult.fulfillmentText will contain a string of what the user is looking for
-  console.log("Intent from User: " + req.body.queryResult.fulfillmentText);
+  // Intent recieved from the user
   let userIntent = req.body.queryResult.fulfillmentText;
-  let stepNum = req.body.queryResult.queryText;
 
+  // THIS IS FOR SELECT STEP EXCLUSIVLY
+  // Gets the last word spoken from the user intent
+  let stepNum = req.body.queryResult.queryText;
   stepNum = stepNum.slice(stepNum.lastIndexOf(' '));
 
   // Get a the step 'text' and image 'url'
@@ -20,11 +21,6 @@ app.post('/', async (req, res) => {
 
   // Format response and send it 
   res.send(response(stepIntentInfo.text, stepIntentInfo.url));
-  console.log("-----------------------------------------------------------------------------------------------------------------");
-});
-
-app.post('/step', (req, res) => {
-  res.send(response('I don\'t know what the steps are yet ...'));
 });
 
 app.listen(3000, () => {
@@ -32,6 +28,7 @@ app.listen(3000, () => {
 });
 
 
+// Just some notes and stuff
 /*
 
   BASIC RESPONSE FOR DIALOGFLOW

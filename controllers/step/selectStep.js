@@ -1,4 +1,4 @@
-const { writeData } = require('./updateStep');
+const { writeData } = require('../update/updateText');
 
 
 module.exports =  {
