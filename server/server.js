@@ -13,15 +13,16 @@ app.post('/', async (req, res) => {
 
   // THIS IS FOR SELECT STEP EXCLUSIVLY
   // Gets the last word spoken from the user intent
-  let stepNum = req.body.queryResult.queryText;
-  stepNum = stepNum.slice(stepNum.lastIndexOf(' '));
+  let param = req.body.queryResult.parameters;
+  let stepNum = param.hasOwnProperty('stepnumber') ? param.stepnumber : "";
 
   // Get a the step 'text' and image 'url'
-  let stepIntentInfo = await intent(userIntent, stepNum.toLowerCase());
+  let stepIntentInfo = await intent(userIntent, stepNum);
 
   // Format response and send it 
   res.send(response(stepIntentInfo.text, stepIntentInfo.url));
 });
+
 
 app.listen(3000, () => {
   console.log('Server listening on port 3000');
