@@ -7,17 +7,17 @@ let proj = true;
 
 // This is the full list of all the steps and image urls
 const stepList = proj ? {
-  1:  {text: "Connect the beam B3 and the two A6 angles by using 6 bolts of 5/8 inch diameter. Tight the bolts by hand.", url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1674247412/step1_e5o7j5.jpg"},
-  2:  {text: "Connect beam S4 and the two A8 angles by using 2 bolts of half inch diameter. Remember to put washers on both sides of the bolts. Then, adjust the torque wrench to 10 pounds per feet and tight the bolts to quarter of a turn.",url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1674247674/step2_bsy9t5.jpg"},
-  3:  {text: "Now you will connect the B3 subassembly to the main column C1. Use 3 bolts with 5/8 inch diameter on both sides and tighten by hand. Remember to put the washer only on the nut side." ,url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1674247677/step3_dt3vza.jpg"},
-  4:  {text: "You will now connect the beam S4 to the column. Use 2 bolts with 1/2 inch dimensions on both sides of the angles to connect to the C1 column. Put washers on both sides of the bolts.", url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1674251153/Step_4_u79n1c.png"},
-  5:  {text: "Lastly, adjust the torque wrench to 10 pounds per feet and tight the bolts to a quarter of a turn. This is the last step.", url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1674247687/step7_erjrve.jpg"},
+  1:  {text: "Connect the beam B3 and the two A6 angles by using 6 bolts of 5/8 inch diameter. Tight the bolts by hand.", url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1674842338/asm_1/A1S1_k8tpxj.png"},
+  2:  {text: "Connect beam S4 and the two A8 angles by using 2 bolts of half inch diameter. Remember to put washers on both sides of the bolts. Then, adjust the torque wrench to 10 pounds per feet and tight the bolts to quarter of a turn.",url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1674842338/asm_1/A1S2_werb4q.png"},
+  3:  {text: "Now you will connect the B3 subassembly to the main column C1. Use 3 bolts with 5/8 inch diameter on both sides and tighten by hand. Remember to put the washer only on the nut side." ,url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1674842338/asm_1/A1S3_yedg5r.png"},
+  4:  {text: "You will now connect the beam S4 to the column. Use 2 bolts with 1/2 inch dimensions on both sides of the angles to connect to the C1 column. Put washers on both sides of the bolts.", url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1674842338/asm_1/A1S4_ekllyf.png"},
+  5:  {text: "Lastly, adjust the torque wrench to 10 pounds per feet and tight the bolts to a quarter of a turn. This is the last step.", url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1674842338/asm_1/A1S5_dvkbkm.png"},
 } : {
-  1: {text: "Connect the beam B8 to the column C4 by using 6 bolts of 5/8 inch diameter. Support the top 2 bolts on each side with the plate 2. Remember: Washers go only on the nut side and tighten the bolts by hand.", url: ""},
-  2: {text: "Connect PS3 to the beam B-8 by using 2 bolts of half an inch diameter. The head of the bolts goes on the PS3 side." , url: ""},
-  3: {text: "To connect PS3 and B8, put a washer on both sides of the bolts and tighten the bolts with the torque wrench to 10 pounds per foot. Only tighten a quarter of a turn", url: ""},
-  4: {text: "Connect P2 and PS3 with two bolts half an inch in diameter. Put a washer on both sides of the bolt. Tight by hand", url: ""},
-  5: {text: "Connect PB7 to the beam B-8 with 1 bolt of 5/8-inch diameter. Then, put a washer only on the nut side and do not tight this bolt completely. Then connect PB7 and P2 with 1 bolt of 5/8 diameter. Put a washer only on the nut side. Then tight both bolts completely. This is the last step", url: ""},
+  1: {text: "Connect the beam B8 to the column C4 by using 6 bolts of 5/8 inch diameter. Support the top 2 bolts on each side with the plate 2. Remember: Washers go only on the nut side and tighten the bolts by hand.", url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1674842347/asm_2/A2S1_w1rovc.png"},
+  2: {text: "Connect PS3 to the beam B-8 by using 2 bolts of half an inch diameter. The head of the bolts goes on the PS3 side." , url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1674842347/asm_2/A2S2_jya10h.png"},
+  3: {text: "To connect PS3 and B8, put a washer on both sides of the bolts and tighten the bolts with the torque wrench to 10 pounds per foot. Only tighten a quarter of a turn", url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1674842347/asm_2/A2S3_vi4crr.png"},
+  4: {text: "Connect P2 and PS3 with two bolts half an inch in diameter. Put a washer on both sides of the bolt. Tight by hand", url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1674842347/asm_2/A2S4_tf8fpv.png"},
+  5: {text: "Connect PB7 to the beam B-8 with 1 bolt of 5/8-inch diameter. Then, put a washer only on the nut side and do not tight this bolt completely. Then connect PB7 and P2 with 1 bolt of 5/8 diameter. Put a washer only on the nut side. Then tight both bolts completely. This is the last step", url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1674842346/asm_2/A2S5_khftom.png"},
 };
 
 
