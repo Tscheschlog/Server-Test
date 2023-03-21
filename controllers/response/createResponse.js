@@ -69,7 +69,7 @@ module.exports = {
   },
 
   // Determine the intent of the user based on the response we get
-  intent: async function(req, stepNum) {
+  intent: async function(req, stepNum, query) {
 
     // The response that will be returned to the user
     let res;
@@ -134,6 +134,10 @@ module.exports = {
           res = {text: "Sorry I didn't catch that.", url: ""};
           break;
         }
+        else if(currStep == -2) {
+          res = {text: "You've completed all the steps for assembly, is there anything else I can help with?", url: ""};
+          break;
+        }
 
         res = stepList[currStep];
         break;
@@ -158,7 +162,7 @@ module.exports = {
 
     // Get time of recieced user Intent & Format the information being logged
     let time  = new Date().toLocaleTimeString();
-    let currentLog = "Time: " + time + "\nIntent: " + intent + "\nCurrent Step: " + currStep + "\n- - - - - - - - - - - - - - - - - - - -\n";
+    let currentLog = "Time: " + time + "\nIntent: " + intent + "\nUser Query: " + query + "\nSystem Res: " + "\"" +res.text + "\"" +  "\nCurrent Step: " + currStep + "\n- - - - - - - - - - - - - - - - - - - -\n";
 
     // Log the user Intent & Print to Server console for testing
     await appendData("../resources/history/logs.txt", currentLog);
@@ -169,3 +173,12 @@ module.exports = {
     
   },
 }
+
+/*
+
+  Track Errors
+  Questions asked but not handled
+
+
+
+*/

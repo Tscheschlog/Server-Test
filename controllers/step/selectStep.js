@@ -6,7 +6,7 @@ module.exports =  {
     // Interpret user response -> return the step number (int)
     selectStep: function(userNum) {
         
-        let userIndex = parseInt(userNum) < 6 ? parseInt(userNum) : -1;
+        let userIndex = parseInt(userNum) < 6 ? parseInt(userNum) : -2;
         return userIndex;
 
     },

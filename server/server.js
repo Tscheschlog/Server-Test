@@ -11,13 +11,17 @@ app.post('/', async (req, res) => {
   // Intent recieved from the user
   let userIntent = req.body.queryResult.fulfillmentText;
 
+  // The query from the user
+  let query = req.body.queryResult.queryText;
+  query = '\"' + query + '\"';
+
   // THIS IS FOR SELECT STEP EXCLUSIVLY
   // Gets the last word spoken from the user intent
   let param = req.body.queryResult.parameters;
   let stepNum = param.hasOwnProperty('stepnumber') ? param.stepnumber : "";
 
   // Get a the step 'text' and image 'url'
-  let stepIntentInfo = await intent(userIntent, stepNum);
+  let stepIntentInfo = await intent(userIntent, stepNum, query);
 
   // Format response and send it 
   res.send(response(stepIntentInfo.text, stepIntentInfo.url));
