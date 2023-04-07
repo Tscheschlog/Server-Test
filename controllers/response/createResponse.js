@@ -139,20 +139,20 @@ module.exports = {
          * Currently not needed.
          * Keep for testing purposes.
          */
-        res = {text: "Here is the help you need ...", url: ""};
+        res = {text: "Here is the help you need\u200B\u200B\u200B\u200B\u200B", url: ""};
         break;
 
-      // Bad Input Intent ----------------------------------------------------------------------------------------------------
+      // Unhandled Input Intent ----------------------------------------------------------------------------------------------------
       default:
-        intent = "Bad Input";
-        res = {text: "Sorry I didn't catch that.", url: ""};
+        intent = "Unhandled input";
+        res = {text: req, url: ""};
         break;
                   
     }
 
     // Get time of recieced user Intent & Format the information being logged
     let time  = new Date().toLocaleTimeString();
-    let currentLog = "Time: " + time + "\nIntent: " + intent + "\nUser Query: " + query + "\nSystem Res: " + "\"" +res.text + "\"" +  "\nCurrent Step: " + currStep + "\n- - - - - - - - - - - - - - - - - - - -\n";
+    let currentLog = "Time: " + time + "\nIntent: " + intent + "\nUser Query: " + query + "\nSystem Res: " + "\"" + res.text + "\"" +  "\nCurrent Step: " + currStep + "\n- - - - - - - - - - - - - - - - - - - -\n";
 
     // Log the user Intent & Print to Server console for testing
     await appendData("../resources/history/logs.txt", currentLog);
