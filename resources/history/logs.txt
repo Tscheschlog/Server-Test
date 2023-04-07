@@ -1,0 +1,24 @@
+Time: 2:41:11 PM
+Intent: Welcome
+User Query: "GOOGLE_ASSISTANT_WELCOME"
+System Res: "Hello, how can I help you?"
+Current Step: -2
+- - - - - - - - - - - - - - - - - - - -
+Time: 2:41:22 PM
+Intent: Select Step
+User Query: "tell me the first step"
+System Res: "First, connect the beam B3 and the two A6 angles by using 6 bolts of 5/8 inch diameter. Here is a hint: First tight a bolt at the top first, and then at the bottom on the opposite side. Then tight the rest of the bolts in any order. Put washer only on the nut side and tight the bolts by hand."
+Current Step: 1
+- - - - - - - - - - - - - - - - - - - -
+Time: 9:55:19 AM
+Intent: Welcome
+User Query: "GOOGLE_ASSISTANT_WELCOME"
+System Res: "Hello, how can I help you?"
+Current Step: 1
+- - - - - - - - - - - - - - - - - - - -
+Time: 9:55:29 AM
+Intent: Step
+User Query: "how do I start"
+System Res: "First, connect the beam B3 and the two A6 angles by using 6 bolts of 5/8 inch diameter. Here is a hint: First tight a bolt at the top first, and then at the bottom on the opposite side. Then tight the rest of the bolts in any order. Put washer only on the nut side and tight the bolts by hand."
+Current Step: 1
+- - - - - - - - - - - - - - - - - - - -
