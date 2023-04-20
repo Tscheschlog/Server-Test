@@ -3,7 +3,7 @@ const { readData, writeData, appendData } = require('../update/updateText');
 const { selectStep, setStep } = require("../step/selectStep");
 
 // Project 1 = true, Project 2 = false
-let proj = true;
+let proj = false;
 
 // This is the full list of all the steps and image urls
 const stepList = proj ? {
@@ -18,7 +18,7 @@ const stepList = proj ? {
   2: {text: "Connect PS3 to the beam B-8 by using 2 bolts of half an inch diameter. Remember to put washers on both sides and place the head of the bolts on the PS3 side." , url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1674842347/asm_2/A2S2_jya10h.png"},
   3: {text: "To connect PS3 and B8, put a washer on both sides of the bolts and tighten the bolts with the torque wrench to 10 pounds per foot. Only tighten a quarter of a turn", url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1674842347/asm_2/A2S3_vi4crr.png"},
   4: {text: "Connect P2 and PS3 with two bolts half an inch in diameter. Put washer on both sides of the bolt and tight by hand", url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1674842347/asm_2/A2S4_tf8fpv.png"},
-  5: {text: "To connect PB-7, connect the bottom 5/8 inch bolt to the beam B-8, but do not tight it completely. Then, connect Pb-7 to P-2 with another 5/8 inch bolt, and tight it completely by hand. Remember to put washers only on the nut side.", url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1674842347/asm_2/A2S5_khftom.png"},
+  5: {text: "To connect PB-7, connect the bottom 5/8 inch bolt to the beam B-8, but do not tight it completely. Then, connect Pb-7 to P-2 with another 5/8 inch bolt, and tight it completely by hand. Remember to put washers only on the nut side.", url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1682016680/A2S5.png"},
   // 5: {text: "Connect PB7 to the beam B-8 with 1 bolt of 5/8-inch diameter. Then, put a washer only on the nut side and do not tight this bolt completely. Then connect PB7 and P2 with 1 bolt of 5/8 diameter. Put a washer only on the nut side. Then tight both bolts completely.", url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1674842346/asm_2/A2S5_khftom.png"},
 };
 
