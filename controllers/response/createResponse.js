@@ -5,6 +5,8 @@ const { selectStep, setStep } = require("../step/selectStep");
 // Project 1 = true, Project 2 = false
 let proj = false;
 
+// This is a change
+
 // This is the full list of all the steps and image urls
 const stepList = proj ? {
   1:  {text: "First, connect the beam B3 and the two A6 angles by using 6 bolts of 5/8 inch diameter. Here is a hint: First tight a bolt at the top first, and then at the bottom on the opposite side. Then tight the rest of the bolts in any order. Put washer only on the nut side and tight the bolts by hand.", url: "https://res.cloudinary.com/djpg8rwkv/image/upload/v1674842338/asm_1/A1S1_k8tpxj.png"},
