@@ -3,7 +3,7 @@ const { readData, writeData, appendData } = require('../update/updateText');
 const { selectStep, setStep } = require("../step/selectStep");
 
 // Project 1 = true, Project 2 = false
-let proj = true;
+let proj = false;
 
 // This is the full list of all the steps and image urls
 const stepList = proj ? {
