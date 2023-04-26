@@ -10,7 +10,6 @@
   * <code>ngrok http 3000</code>
 * Add the ngrok address to the Dialogflow fulfillment
   * address: "http://some.address.ngrok.io/"
-  * Be sure to include the '/'
 
 ## QUaltrics Survey
   After experiment
